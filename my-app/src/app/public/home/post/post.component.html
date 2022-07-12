@@ -1,0 +1,74 @@
+<div class="container my-5">
+  <div class="card shadow">
+    <div class="card-header">
+      <div class="row d-flex justify-content-between">
+        <div class="col-md-3">
+          <h1>Post List</h1>
+        </div>
+        <div class="col-md-1">
+          <button class="btn btn-sm btn-primary text-right" (click)="add()">
+            <fa-icon [icon]="faPlus"></fa-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div>
+        <table class="table table-bordered">
+          <thead>
+            <th>UserId</th>
+            <th>title</th>
+            <th>body</th>
+            <th>Action</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let post of posts| async">
+              <td>{{ post.id}}</td>
+              <td>{{ post.title}}</td>
+              <td>{{ post.body}}</td>
+              <td>
+              <button (click)="edit(post.id)" class="btn btn-sm shadow btn-primary">
+                  <fa-icon [icon]="faPencilAlt"></fa-icon>
+                </button>&nbsp;
+                <button (click)="delete(post.id)" class="btn btn-sm shadow  btn-danger">
+                  <fa-icon [icon]="faEraser"></fa-icon>
+                </button>&nbsp;
+                <button (click)="employeeDetails(post.id)" class="btn btn-sm shadow btn-success">
+                  <fa-icon [icon]="faEye"></fa-icon>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="mb-3">
+        <label for="dateOfBirth">Date of birth</label>
+        <div class="input-group">
+          <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="">
+          <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+
+<hr>
+
+<pre>{{ closeResult }}</pre> -->

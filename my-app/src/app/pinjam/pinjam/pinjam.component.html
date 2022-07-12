@@ -1,0 +1,37 @@
+<p>pinjam works!</p>
+<div class="container">
+  <div class="row">
+
+    <ng-container *ngFor="let val of listPinjam">
+      <div class="col-md-4">
+        <div class="card shadow border-0 h-100">
+          <img src="https://placeimg.com/640/480/arch" class="card-img-top" alt="">
+          <div class="card-body">
+            <!-- <div class="row"> -->
+            <h2>{{val.judul}}</h2>
+            <div class="row d-flex justify-content-between">
+              <div class="col-md-6">
+                <p>Penerbit: <br> {{val.book.penerbit}}</p>
+                <p>Pengarang: <br>{{val.book.pengarang}}</p>
+              </div>
+              <div class="col-md-6 text-right">
+                <p>Tahun Terbit: {{val.book.tahun_terbit}}</p>
+              </div>
+            </div>
+
+            <div class="row d-flex justify-content-between">
+              <div class="col-md-6">
+                <button class="btn btn-success" (click)="kembali(val.id)" type="button">Kembali</button>
+              </div>
+              <!-- <div class="col-md-5 text-right">
+                <span class="{{val.status == 'tersedia' ? 'alert-info' : 'alert-danger'}} text-right p-2"
+                  style="border-radius: 5px;">{{val.status}}</span>
+              </div> -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

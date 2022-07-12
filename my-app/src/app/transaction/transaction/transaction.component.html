@@ -1,0 +1,27 @@
+<div class="container mt-5">
+  <div class="card shadow">
+    <div class="card-header">List Transaksi</div>
+    <div class="card-body">
+      <table class="table table-striped table-hovered table-bordered">
+        <thead>
+          <th>No</th>
+          <th>Nama Peminjam</th>
+          <th>Tanggal Pinjam</th>
+          <th>Tanggal Pengembalian</th>
+          <th>Status Pengembalian</th>
+          <th>Denda</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let transaction of listTr">
+            <td>{{ transaction.id }}</td>
+            <td>{{ transaction.user.name }}</td>
+            <td>{{ transaction.tanggal_pinjam }}</td>
+            <td>{{ transaction.tanggal_kembali }}</td>
+            <td>{{ transaction.kembali }}</td>
+            <td>{{ transaction.denda == null ? '-' : transaction.denda }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
