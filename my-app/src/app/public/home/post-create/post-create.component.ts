@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Posts } from 'src/app/posts';
+// import { Posts } from 'src/app/posts';
 import { PostsService } from 'src/app/posts.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { PostsService } from 'src/app/posts.service';
 })
 export class PostCreateComponent implements OnInit {
 
-  posts: Posts = new Posts();
+  posts: any;
   // constructor() { }
 
   constructor(private postsService: PostsService, private router: Router) { }
@@ -23,7 +23,7 @@ export class PostCreateComponent implements OnInit {
 
     this.postsService.createEmployee(this.posts).subscribe(data => {
       console.log(data)
-      this.posts = new Posts();
+      // this.posts =  ;
       this.gotoList();
     },
       error => console.log(error));

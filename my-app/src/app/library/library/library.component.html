@@ -1,5 +1,6 @@
 <div class="container mt-5">
-
+  <button [routerLink]="['/pinjam']" class="btn btn-success">Terpinjam</button> &nbsp;
+  <button [routerLink]="['/transaction']" class="btn btn-info">transaction</button>
   <h1 style="font-weight:600; ">List Buku</h1>
   <div class="row">
     <ng-container *ngFor="let val of listBook">

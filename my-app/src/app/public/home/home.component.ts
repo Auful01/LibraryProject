@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { EmployeeService } from 'src/app/employee.service';
-import { Posts } from 'src/app/posts';
+// import { Posts } from 'src/app/posts';
 import { PostsService } from 'src/app/posts.service';
 
-var post: Observable<Posts[]>;
+var post: Observable<any>;
 
 
 @Component({
@@ -16,7 +16,7 @@ var post: Observable<Posts[]>;
 
 export class HomeComponent implements OnInit {
 
-  posts: Observable<Posts[]>;
+  posts: Observable<any>;
 
   constructor(private postsService: PostsService, private router: Router) { }
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Posts } from 'src/app/posts';
+// import { Posts } from 'src/app/posts';
 import { PostsService } from 'src/app/posts.service';
 import { NgbButtonsModule } from '@ng-bootstrap/ng-bootstrap';
 import { faPlus, faPencilAlt, faEye, faEraser } from '@fortawesome/free-solid-svg-icons';
@@ -14,7 +14,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 })
 export class PostComponent implements OnInit {
 
-  posts: Observable<Posts[]>;
+  posts: Observable<any>;
 
   constructor(private postsService: PostsService, private router: Router, private modalService: NgbModal) { }
   closeResult: string;

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeeService } from 'src/app/employee.service';
-import { Posts } from 'src/app/posts';
+// import { Posts } from 'src/app/posts';
 import { PostsService } from 'src/app/posts.service';
 import { Employee } from 'src/employee';
 
@@ -12,13 +12,13 @@ import { Employee } from 'src/employee';
 })
 export class PostDetailComponent implements OnInit {
   id: number;
-  post: Posts;
+  post: any;
 
   constructor(private route: ActivatedRoute, private router: Router,
     private postService: PostsService) { }
 
   ngOnInit() {
-    this.post = new Posts();
+    this.post = [];
 
     this.id = this.route.snapshot.params['id'];
 

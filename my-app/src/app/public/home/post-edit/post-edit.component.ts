@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Posts } from 'src/app/posts';
+// import { Posts } from 'src/app/posts';
 import { PostsService } from 'src/app/posts.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -11,13 +11,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class PostEditComponent implements OnInit {
   id: number;
-  posts: Posts;
+  posts: any;
 
   constructor(private route: ActivatedRoute, private router: Router,
     private postService: PostsService) { }
 
   ngOnInit() {
-    this.posts = new Posts();
+    this.posts = [];
 
     this.id = this.route.snapshot.params['id'];
 
@@ -32,7 +32,7 @@ export class PostEditComponent implements OnInit {
     this.postService.updateEmployee(this.id, this.posts)
       .subscribe(data => {
         console.log(data);
-        this.posts = new Posts();
+        // this.posts = [];
         this.gotoList();
       }, error => console.log(error));
   }
